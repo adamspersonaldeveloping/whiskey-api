@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiskey API</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+    <body>
+        <h1 data-position="header">It takes money to buy Whiskey... So let's find a good one!</h1>
+
+        <section data-position="add-quotes">
+            <h2>Add whiskey</h2>
+        
+            <form action="/whiskeys" method="POST">
+              <input type="text" placeholder="name" name="name" />
+              <input type="text" placeholder="maker" name="maker" />
+              <input type="text" placeholder="description" name="description" />
+              <button type="submit">Submit</button>
+            </form>
+          </section>
+
+          <section data-position="quotes">
+            <h2>Whiskeys</h2>
+      
+            <ul class="whiskeys">
+              <% for(var i = 0; i < whiskeys.length; i++) {%>
+              <li class="whiskey">
+                <span>Name: <%= whiskeys[i].name %></span><br>
+                <span>Maker: <%= whiskeys[i].maker %></span><br>
+                <span>Description: <%= whiskeys[i].description %></span>
+                <button class="trash">&#128465</button>
+              </li>
+              <% } %>
+            </ul>
+          </section>
+        <script src="/main.js"></script>   
+    </body>
+</html>
